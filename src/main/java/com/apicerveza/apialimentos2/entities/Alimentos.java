@@ -10,7 +10,7 @@ import java.time.LocalDate;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class    Alimento {
+public class Alimentos {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -9,7 +9,7 @@ import java.time.LocalDate;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Existencia {
+public class Existencias {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,11 +17,11 @@ public class Existencia {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "alimento_id", nullable = false)
-    private Alimento alimento;
+    private Alimentos alimento;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ubicacion_id", nullable = false)
-    private Ubicacion ubicacion;
+    private Ubicaciones ubicacion;
 
     @Column(nullable = false)
     private Integer cantidad;
