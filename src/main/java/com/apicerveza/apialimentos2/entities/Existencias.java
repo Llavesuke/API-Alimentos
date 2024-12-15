@@ -28,4 +28,8 @@ public class Existencias {
 
     @Column(name = "fecha_entrada", nullable = false)
     private LocalDate fechaEntrada;
+
+    public LocalDate getFechaEntrada() {
+        return fechaEntrada;
+    }
 }
