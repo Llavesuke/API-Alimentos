@@ -1,25 +1,29 @@
 package com.apicerveza.apialimentos2.entities;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "existencias")
-@Data
+@Getter @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "existencias")
 public class Existencias {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "alimento_id", nullable = false)
     private Alimentos alimento;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "ubicacion_id", nullable = false)
     private Ubicaciones ubicacion;
 
@@ -28,4 +32,5 @@ public class Existencias {
 
     @Column(name = "fecha_entrada", nullable = false)
     private LocalDate fechaEntrada;
+
 }

@@ -7,7 +7,7 @@ import java.time.LocalDate;
 
 @Entity
 @Table(name = "alimentos")
-@Data
+@Getter @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class Alimentos {
@@ -27,4 +27,5 @@ public class Alimentos {
 
     @Column(name = "fecha_caducidad")
     private LocalDate fechaCaducidad;
+
 }

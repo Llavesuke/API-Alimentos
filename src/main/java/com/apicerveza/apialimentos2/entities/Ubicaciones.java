@@ -1,13 +1,12 @@
 package com.apicerveza.apialimentos2.entities;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
+@Getter @Setter
 @Table(name = "ubicaciones")
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
 public class Ubicaciones {
 
     @Id
@@ -15,11 +14,11 @@ public class Ubicaciones {
     private Long id;
 
     @Column(nullable = false)
-    private String descripcion; // Ej. "Balda superior"
-
-    @Column(name = "tipo_ubicacion", nullable = false)
-    private String tipoUbicacion; // Ej. Alacena, Nevera, Congelador
+    private String descripcion;
 
     @Column(nullable = false)
-    private Integer capacidad; // Capacidad máxima
+    private String tipoUbicacion;
+
+    @Column(nullable = false)
+    private int capacidad;
 }
